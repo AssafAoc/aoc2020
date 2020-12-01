@@ -1,0 +1,8 @@
+# Rust ignores
+/target/
+Cargo.lock
+**/*.rs.bk
+
+# intellij ignores
+/.idea/
+*.iml
