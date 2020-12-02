@@ -23,7 +23,7 @@ fn find_triple(numbers: &[u32]) -> (u32, u32, u32) {
 }
 
 pub fn run() {
-    let input = crate::get_input(1, "");
+    let input = super::get_input(1, "");
     // let test_vec = vec![1721, 979, 366, 299, 675, 1456]; let input = test_vec.iter().map(|i| i.to_string());
 
     let numbers = input.map(|s| s.parse::<u32>().unwrap()).collect::<Vec<_>>();

@@ -4,6 +4,7 @@ use std::io::BufRead;
 use std::path::{Path, PathBuf};
 
 mod d1;
+mod d2;
 
 fn get_input(day: u8, suffix: &str) -> impl Iterator<Item=String> {
     let file_path = {
@@ -18,5 +19,6 @@ fn get_input(day: u8, suffix: &str) -> impl Iterator<Item=String> {
 }
 
 fn main() {
-    d1::run();
+    // d1::run();
+    d2::run();
 }
