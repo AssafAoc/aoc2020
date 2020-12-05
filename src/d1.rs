@@ -22,6 +22,7 @@ fn find_triple(numbers: &[u32]) -> (u32, u32, u32) {
     panic!("couldn't find numbers")
 }
 
+#[allow(dead_code)]
 pub fn run() {
     let input = super::get_input(1, "");
     // let test_vec = vec![1721, 979, 366, 299, 675, 1456]; let input = test_vec.iter().map(|i| i.to_string());

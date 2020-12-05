@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub fn run() {
     struct Record {
         number_one: u8,

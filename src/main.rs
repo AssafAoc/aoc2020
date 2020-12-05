@@ -1,10 +1,12 @@
 use std::fs::File;
 use std::io::BufReader;
 use std::io::BufRead;
-use std::path::{Path, PathBuf};
+use std::path::PathBuf;
 
 mod d1;
 mod d2;
+mod d3;
+mod d4;
 
 fn get_input(day: u8, suffix: &str) -> impl Iterator<Item=String> {
     let file_path = {
@@ -15,10 +17,12 @@ fn get_input(day: u8, suffix: &str) -> impl Iterator<Item=String> {
     };
     let file = File::open(&file_path).expect(&format!("file: {:?} not found", file_path));
     let reader = BufReader::new(file);
-    reader.lines().map(|s| s.unwrap()).filter(|s| s.len() > 0)
+    reader.lines().map(|s| s.unwrap())
 }
 
 fn main() {
     // d1::run();
-    d2::run();
+    // d2::run();
+    // d3::run();
+    d4::run();
 }
