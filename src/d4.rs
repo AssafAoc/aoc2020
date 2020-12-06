@@ -1,6 +1,7 @@
 use std::iter;
 use std::collections::HashMap;
 
+#[allow(dead_code)]
 const TEST: &str = r#"ecl:gry pid:860033327 eyr:2020 hcl:#fffffd
 byr:1937 iyr:2017 cid:147 hgt:183cm
 
@@ -15,6 +16,7 @@ hgt:179cm
 hcl:#cfa07d eyr:2025 pid:166559648
 iyr:2011 ecl:brn hgt:59in"#;
 
+#[allow(dead_code)]
 const TEST2: &str = r#"pid:087499704 hgt:74in ecl:grn iyr:2012 eyr:2030 byr:1980
 hcl:#623a2f
 
@@ -42,29 +44,16 @@ hgt:59cm ecl:zzz
 eyr:2038 hcl:74454a iyr:2023
 pid:3556412378 byr:2007"#;
 
+#[allow(dead_code)]
 pub fn run() {
     let input = super::get_input(4, "").collect::<Vec<_>>();
     // let input = TEST.lines().map(|s| s.to_owned()).collect::<Vec<_>>();
     // let input = TEST2.lines().map(|s| s.to_owned()).collect::<Vec<_>>();
 
-    // let create_passport_checklist = || {
-    //     let mut tmp = HashMap::new();
-    //     tmp.insert("byr", None);
-    //     tmp.insert("iyr", None);
-    //     tmp.insert("eyr", None);
-    //     tmp.insert("hgt", None);
-    //     tmp.insert("hcl", None);
-    //     tmp.insert("ecl", None);
-    //     tmp.insert("pid", None);
-    //     tmp.insert("cid", None);
-    //     tmp
-    // };
-
-    let mut passports = input.split(|l| l.len() < 3); // assuming blank lines have at most a \r\n
+    let passports = input.split(|l| l.len() == 0);
 
     let mut good_passports_a = 0;
     let mut good_passports_b = 0;
-
 
     for passport_info in passports {
         let mut it: Box<dyn Iterator<Item=&str>> = Box::new(iter::empty());
@@ -91,8 +80,8 @@ pub fn run() {
                                         if parsed_byr >= 1920 && parsed_byr <= 2002 {
                                             if let Ok(parsed_iyr) = iyr.parse::<u16>() {
                                                 if parsed_iyr >= 2010 && parsed_iyr <= 2020 {
-                                                    if let Ok(parsed_hgt) = hgt[..hgt.len()-2].parse::<u16>() {
-                                                        if (&hgt[hgt.len()-2..] == "cm" && parsed_hgt >= 150 && parsed_hgt <= 193) || (&hgt[hgt.len()-2..] == "in" && parsed_hgt >= 59 && parsed_hgt <= 76) {
+                                                    if let Ok(parsed_hgt) = hgt[..hgt.len() - 2].parse::<u16>() {
+                                                        if (&hgt[hgt.len() - 2..] == "cm" && parsed_hgt >= 150 && parsed_hgt <= 193) || (&hgt[hgt.len() - 2..] == "in" && parsed_hgt >= 59 && parsed_hgt <= 76) {
                                                             if let Ok(parsed_eyr) = eyr.parse::<u16>() {
                                                                 if parsed_eyr >= 2020 && parsed_eyr <= 2030 {
                                                                     let mut hcl_chars = hcl.chars();
@@ -118,9 +107,6 @@ pub fn run() {
                 }
             }
         }
-        // if let Some(cid) = passport_infoids.get("cid") {
-        //
-        // }
     }
 
     println!("a: {}", good_passports_a);

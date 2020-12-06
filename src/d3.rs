@@ -11,6 +11,7 @@ const TEST: &str = "..##.......
 #...##....#
 .#..#...#.#";
 
+#[allow(dead_code)]
 pub fn run() {
     let input = super::get_input(3, "");
     // let input = TEST.split('\n').map(|s| s.to_owned());
