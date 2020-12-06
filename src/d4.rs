@@ -92,7 +92,7 @@ pub fn run() {
                                             if let Ok(parsed_iyr) = iyr.parse::<u16>() {
                                                 if parsed_iyr >= 2010 && parsed_iyr <= 2020 {
                                                     if let Ok(parsed_hgt) = hgt[..hgt.len()-2].parse::<u16>() {
-                                                        if (&hgt[hgt.len()-2..] == "cm" && parsed_hgt > 150 && parsed_hgt < 193) || (&hgt[hgt.len()-2..] == "in" && parsed_hgt > 59 && parsed_hgt < 76) {
+                                                        if (&hgt[hgt.len()-2..] == "cm" && parsed_hgt >= 150 && parsed_hgt <= 193) || (&hgt[hgt.len()-2..] == "in" && parsed_hgt >= 59 && parsed_hgt <= 76) {
                                                             if let Ok(parsed_eyr) = eyr.parse::<u16>() {
                                                                 if parsed_eyr >= 2020 && parsed_eyr <= 2030 {
                                                                     let mut hcl_chars = hcl.chars();
