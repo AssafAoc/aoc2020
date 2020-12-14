@@ -17,6 +17,7 @@ a
 
 b"#; // 3, 3, 3, 1, 1
 
+#[allow(dead_code)]
 pub fn run() {
     let input = super::get_input(6, "").collect::<Vec<_>>();
     // let input = TEST.lines().collect::<Vec<_>>();

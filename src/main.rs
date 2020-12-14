@@ -9,6 +9,8 @@ mod d3;
 mod d4;
 mod d5;
 mod d6;
+mod d7;
+mod d8;
 
 fn get_input(day: u8, suffix: &str) -> impl Iterator<Item=String> {
     let file_path = {
@@ -28,5 +30,10 @@ fn main() {
     // d3::run();
     // d4::run();
     // d5::run();
-    d6::run();
+    // d6::run();
+    // d7::run(); // FAILED for now
+    d8::run();
+
+    // drab cyan
+    // faded teal
 }
