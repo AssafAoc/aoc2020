@@ -1,8 +1,8 @@
 use std::collections::{HashMap, HashSet, BTreeSet};
-use std::thread::current;
 
 // TODO make it work, skipping for now
 
+#[allow(dead_code)]
 const TEST: &str = r#"light red bags contain 1 bright white bag, 2 muted yellow bags.
 dark orange bags contain 3 bright white bags, 4 muted yellow bags.
 bright white bags contain 1 shiny gold bag.
@@ -13,6 +13,7 @@ vibrant plum bags contain 5 faded blue bags, 6 dotted black bags.
 faded blue bags contain no other bags.
 dotted black bags contain no other bags."#;
 
+#[allow(dead_code)]
 pub fn run() {
     let input = super::get_input(7, "");
     // let input = TEST.lines();
