@@ -40,13 +40,13 @@ pub fn run() {
     }
 
     let mut options = 0;
-    let mut stack = vec!["shiny gold".to_owned()];
+    // let mut stack = vec!["shiny gold".to_owned()];
     let mut stack = vec![("shiny gold".to_owned(), 0)];
     // let mut stack = vec![("plaid purple".to_owned(), 0)];
     let mut visited = HashSet::new();
 
     // while let Some(current) = stack.pop() {
-    let mut all = 0;
+    // let mut all = 0;
     while let Some((current, indentation)) = stack.pop() {
         if !visited.contains(&current) {
             println!("{:indent$}{}", "", current, indent=indentation);
